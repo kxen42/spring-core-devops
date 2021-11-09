@@ -22,6 +22,7 @@ Spring 3.1. It parses the Spring EL expressions in the `@Value` annotations to g
 Uses `@Autowired Environment env;` pull in the .properties files without the placeholder configurer.
 Properties are fetched with `env.getProperty("property-name")` for optional properties.
 Required property with simple type conversion from String `env.getRequiredProperty("property-name", Integer.class)`.
+
 Properties can be set from environment variables; can set in IntelliJ Run Configuration.
 
 ### Ch 12. Multiple Property Files
