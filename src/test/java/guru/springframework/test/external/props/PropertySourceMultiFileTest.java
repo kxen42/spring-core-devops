@@ -12,13 +12,13 @@ import guru.springframework.test.jms.FakeJmsBroker;
 import guru.test.config.external.props.ExternalPropsPropertySourceTestConfig;
 
 /**
- * Test loading FakeJmsBroker bean given ExternalPropsPropertySourceTestConfig.
+ * Test loading FakeJmsBroker bean given ExternalPropsMultiFileConfig.
  * <p>
  * Created by jt on 5/7/16.
  */
 @RunWith(SpringJUnit4ClassRunner.class) // load Spring Context
-@ContextConfiguration(classes = ExternalPropsPropertySourceTestConfig.class)
-public class PropertySourceTest {
+@ContextConfiguration(classes = ExternalPropsMultiFileConfig.class)
+public class PropertySourceMultiFileTest {
 
     @Autowired
     FakeJmsBroker fakeJmsBroker;
@@ -28,6 +28,6 @@ public class PropertySourceTest {
         assertEquals("10.10.10.123", fakeJmsBroker.getUrl());
         assertEquals(3330, fakeJmsBroker.getPort().intValue());
         assertEquals("Ron", fakeJmsBroker.getUser());
-        assertEquals("Burgundy", fakeJmsBroker.getPassword());
+        assertEquals("&%$)(*&#^!@!@#$", fakeJmsBroker.getPassword());
     }
 }

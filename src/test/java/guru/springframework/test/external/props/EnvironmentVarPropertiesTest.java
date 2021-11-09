@@ -9,16 +9,17 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import guru.springframework.test.jms.FakeJmsBroker;
+import guru.test.config.external.props.ExternalPropsEnvironmentConfiguration;
 import guru.test.config.external.props.ExternalPropsPropertySourceTestConfig;
 
 /**
- * Test loading FakeJmsBroker bean given ExternalPropsPropertySourceTestConfig.
- * <p>
+ * Test loading FakeJmsBroker bean given ExternalPropsEnvironmentConfiguration.
  * Created by jt on 5/7/16.
+ * Update kxenson on 09/11/21
  */
 @RunWith(SpringJUnit4ClassRunner.class) // load Spring Context
-@ContextConfiguration(classes = ExternalPropsPropertySourceTestConfig.class)
-public class PropertySourceTest {
+@ContextConfiguration(classes = ExternalPropsEnvironmentConfiguration.class)
+public class EnvironmentVarPropertiesTest {
 
     @Autowired
     FakeJmsBroker fakeJmsBroker;
