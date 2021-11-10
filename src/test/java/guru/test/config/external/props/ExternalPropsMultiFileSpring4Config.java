@@ -1,4 +1,4 @@
-package guru.springframework.test.external.props;
+package guru.test.config.external.props;
 
 import guru.springframework.test.jms.FakeJmsBroker;
 

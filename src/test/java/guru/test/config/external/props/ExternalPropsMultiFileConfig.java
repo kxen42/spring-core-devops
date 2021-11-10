@@ -1,4 +1,4 @@
-package guru.springframework.test.external.props;
+package guru.test.config.external.props;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

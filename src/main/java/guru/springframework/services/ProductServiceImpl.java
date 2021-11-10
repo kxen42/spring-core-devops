@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by jt on 1/26/16.
@@ -31,7 +32,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProduct(Integer id) {
         jmsTextMessageService.sendTextMessage("Fetching Product ID: " + id );
-        return productRepository.findOne(id);
+        Optional<Product> byId = productRepository.findById(id);
+       return byId.orElse(null);
     }
 
     @Override

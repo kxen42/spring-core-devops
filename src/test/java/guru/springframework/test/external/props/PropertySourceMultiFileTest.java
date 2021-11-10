@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import guru.springframework.test.jms.FakeJmsBroker;
-import guru.test.config.external.props.ExternalPropsPropertySourceTestConfig;
+import guru.test.config.external.props.ExternalPropsMultiFileConfig;
 
 /**
  * Test loading FakeJmsBroker bean given ExternalPropsMultiFileConfig.
