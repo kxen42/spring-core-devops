@@ -1,32 +1,25 @@
 package guru.test.config.external.props;
 
-import guru.springframework.test.jms.FakeJmsBroker;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 
+import guru.springframework.test.jms.FakeJmsBroker;
+
 /**
- * Demo Spring 4 {@code @PropertySources} and {@code @PropertySource}
+ * Demo files in simple list
  * <p>
  * Created by jt on 5/7/16.
- * Renamed by kxenson on 11/09/21.
  */
 @Configuration
-@PropertySources({
-    @PropertySource("classpath:testing.properties"),
-    @PropertySource("classpath:encrypted-testing.properties")
-})
-public class ExternalPropsMultiFileSpring4Config {
+@PropertySource({"classpath:testing.properties", "classpath:encrypted-testing.properties"})
+public class ExternalPropsMultiFile {
 
     @Autowired
     Environment env;
 
     @Bean
-    public FakeJmsBroker fakeJmsBrokerMultiS4() {
+    public FakeJmsBroker fakeJmsBrokerMulti() {
         FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
         fakeJmsBroker.setUrl(env.getProperty("guru.jms.server"));
         fakeJmsBroker.setPort(env.getRequiredProperty("guru.jms.port", Integer.class));

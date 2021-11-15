@@ -1,23 +1,19 @@
 package guru.springframework.test.external.props;
 
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
 
 import guru.springframework.test.jms.FakeJmsBroker;
-import guru.test.config.external.props.ExternalPropsEnvironmentConfiguration;
-import guru.test.config.external.props.ExternalPropsPropertySourceTestConfig;
+import guru.test.config.external.props.ExternalPropsEnvironment;
 
 /**
- * Test loading FakeJmsBroker bean given ExternalPropsEnvironmentConfiguration.
  * Created by jt on 5/7/16.
  */
-@SpringBootTest(classes = ExternalPropsEnvironmentConfiguration.class)
-public class EnvironmentVarPropertiesTest {
+@SpringBootTest(classes = ExternalPropsEnvironment.class)
+public class PropertySourceEnvTest {
 
     @Autowired
     FakeJmsBroker fakeJmsBroker;
@@ -29,4 +25,5 @@ public class EnvironmentVarPropertiesTest {
         assertEquals("Ron", fakeJmsBroker.getUser());
         assertEquals("Burgundy", fakeJmsBroker.getPassword());
     }
+
 }

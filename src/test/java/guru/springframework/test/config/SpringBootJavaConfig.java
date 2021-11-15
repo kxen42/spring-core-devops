@@ -7,9 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import guru.springframework.test.jms.FakeJmsBroker;
 
 /**
- * Demo Spring Boot simplification of property configuration
  * Created by jt on 5/7/16.
  */
+
+
 @Configuration
 public class SpringBootJavaConfig {
     @Value("${guru.jms.server}")

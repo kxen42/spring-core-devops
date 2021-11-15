@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import guru.springframework.test.jms.FakeJmsBroker;
-import guru.test.config.external.props.ExternalPropsMultiFileConfig;
+import guru.test.config.external.props.ExternalPropsMultiFile;
 
 
 /**
@@ -16,7 +16,7 @@ import guru.test.config.external.props.ExternalPropsMultiFileConfig;
  * <p>
  * Created by jt on 5/7/16.
  */
-@SpringBootTest(classes = ExternalPropsMultiFileConfig.class)
+@SpringBootTest(classes = ExternalPropsMultiFile.class)
 public class PropertySourceMultiFileTest {
 
     @Autowired
