@@ -1,9 +1,7 @@
 package guru.springframework.test.external.props;
 
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,11 +12,14 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import guru.springframework.SpringCoreDevOpsApplication;
 import guru.springframework.test.jms.FakeJmsBroker;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * Created by jt on 5/7/16.
  */
 // TODO: haven't got this working with Spring Boot 2.5.6
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = {SpringCoreDevOpsApplication.class})
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = {SpringCoreDevOpsApplication.class})
+@SpringBootTest(classes = {SpringCoreDevOpsApplication.class})
 @TestPropertySource("/application.properties")
 public class SpringBootPropertiesTest {
     @Autowired

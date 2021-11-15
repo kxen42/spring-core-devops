@@ -1,13 +1,14 @@
 package guru.springframework.test.external.props;
 
-import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import guru.springframework.test.jms.FakeJmsBroker;
 import guru.test.config.external.props.ExternalPropsEnvironment;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by jt on 5/7/16.
