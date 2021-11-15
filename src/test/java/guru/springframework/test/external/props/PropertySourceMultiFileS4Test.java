@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import guru.springframework.test.jms.FakeJmsBroker;
+import guru.test.config.external.props.ExternalPropsMultiFileSpring4Config;
 
 /**
  * Test loading FakeJmsBroker bean given ExternalPropsMultiFileSpring4Config.
