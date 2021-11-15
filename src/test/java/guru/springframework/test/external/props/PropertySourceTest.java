@@ -1,12 +1,10 @@
 package guru.springframework.test.external.props;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import guru.springframework.test.jms.FakeJmsBroker;
 import guru.test.config.external.props.ExternalPropsPropertySourceTestConfig;
@@ -16,8 +14,7 @@ import guru.test.config.external.props.ExternalPropsPropertySourceTestConfig;
  * <p>
  * Created by jt on 5/7/16.
  */
-@RunWith(SpringJUnit4ClassRunner.class) // load Spring Context
-@ContextConfiguration(classes = ExternalPropsPropertySourceTestConfig.class)
+@SpringBootTest(classes = ExternalPropsPropertySourceTestConfig.class)
 public class PropertySourceTest {
 
     @Autowired

@@ -1,9 +1,7 @@
 package guru.test.config.external.props;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 
 import guru.springframework.test.jms.FakeJmsBroker;
@@ -12,10 +10,12 @@ import guru.springframework.test.jms.FakeJmsBroker;
  * Demo files in simple list
  * <p>
  * Created by jt on 5/7/16.
- * Renamed by kxenson 11/09/2021.
  */
 @Configuration
-@PropertySource({"classpath:testing.properties", "classpath:encrypted-testing.properties"})
+@PropertySources({
+    @PropertySource("classpath:testing.properties"),
+    @PropertySource("classpath:encrypted-testing.properties")
+})
 public class ExternalPropsMultiFileConfig {
 
     @Autowired

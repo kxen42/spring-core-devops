@@ -1,23 +1,22 @@
 package guru.springframework.test.external.props;
 
-import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import guru.springframework.test.jms.FakeJmsBroker;
 import guru.test.config.external.props.ExternalPropsMultiFileConfig;
+
 
 /**
  * Test loading FakeJmsBroker bean given ExternalPropsMultiFileConfig.
  * <p>
  * Created by jt on 5/7/16.
  */
-@RunWith(SpringJUnit4ClassRunner.class) // load Spring Context
-@ContextConfiguration(classes = ExternalPropsMultiFileConfig.class)
+@SpringBootTest(classes = ExternalPropsMultiFileConfig.class)
 public class PropertySourceMultiFileTest {
 
     @Autowired

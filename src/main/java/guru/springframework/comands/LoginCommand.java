@@ -1,6 +1,7 @@
 package guru.springframework.comands;
 
-import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotEmpty;
 
 /**
  * Created by jt on 2/2/16.
