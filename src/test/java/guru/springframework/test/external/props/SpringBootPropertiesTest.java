@@ -5,18 +5,20 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 import guru.springframework.SpringCoreDevOpsApplication;
 import guru.springframework.test.jms.FakeJmsBroker;
-import guru.test.config.external.props.ExternalPropsEnvironmentConfiguration;
 
 /**
  * Created by jt on 5/7/16.
  */
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = SpringCoreDevOpsApplication.class)
+// TODO: haven't got this working with Spring Boot 2.5.6
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = {SpringCoreDevOpsApplication.class})
 @TestPropertySource("/application.properties")
 public class SpringBootPropertiesTest {
     @Autowired
